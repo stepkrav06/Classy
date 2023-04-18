@@ -7,18 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		279BD59E29EF35FE00390D01 /* ClassyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD59D29EF35FE00390D01 /* ClassyApp.swift */; };
-		279BD5A029EF35FE00390D01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD59F29EF35FE00390D01 /* ContentView.swift */; };
-		279BD5A229EF360000390D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279BD5A129EF360000390D01 /* Assets.xcassets */; };
 		279BD5A529EF360000390D01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279BD5A429EF360000390D01 /* Preview Assets.xcassets */; };
+		279BD5B929EF361E00390D01 /* ExamAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5AB29EF361A00390D01 /* ExamAddView.swift */; };
+		279BD5BA29EF361E00390D01 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5AC29EF361A00390D01 /* SettingsView.swift */; };
+		279BD5BB29EF361E00390D01 /* ClassListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5AD29EF361A00390D01 /* ClassListView.swift */; };
+		279BD5BC29EF361E00390D01 /* ExamEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5AE29EF361B00390D01 /* ExamEditView.swift */; };
+		279BD5BD29EF361E00390D01 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5AF29EF361B00390D01 /* Class.swift */; };
+		279BD5BE29EF361E00390D01 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5B029EF361B00390D01 /* DayView.swift */; };
+		279BD5BF29EF361E00390D01 /* FullWeekClassListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5B129EF361B00390D01 /* FullWeekClassListView.swift */; };
+		279BD5C029EF361E00390D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279BD5B229EF361C00390D01 /* Assets.xcassets */; };
+		279BD5C129EF361E00390D01 /* ClassyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5B329EF361C00390D01 /* ClassyApp.swift */; };
+		279BD5C229EF361E00390D01 /* EditClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5B429EF361D00390D01 /* EditClassView.swift */; };
+		279BD5C329EF361E00390D01 /* ClassAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5B529EF361D00390D01 /* ClassAddView.swift */; };
+		279BD5C429EF361E00390D01 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5B629EF361D00390D01 /* Tab.swift */; };
+		279BD5C529EF361E00390D01 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5B729EF361D00390D01 /* TimerView.swift */; };
+		279BD5C829EF390F00390D01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5C729EF390F00390D01 /* ContentView.swift */; };
+		279BD5D029EF397900390D01 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279BD5CF29EF397900390D01 /* WidgetKit.framework */; };
+		279BD5D229EF397900390D01 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279BD5D129EF397900390D01 /* SwiftUI.framework */; };
+		279BD5D929EF397C00390D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279BD5D829EF397C00390D01 /* Assets.xcassets */; };
+		279BD5DD29EF397C00390D01 /* ClassyWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 279BD5CD29EF397900390D01 /* ClassyWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		279BD5E829EF39B600390D01 /* ScheduleDayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5E429EF39A100390D01 /* ScheduleDayWidget.swift */; };
+		279BD5E929EF39BA00390D01 /* NextLessonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5E329EF39A100390D01 /* NextLessonWidget.swift */; };
+		279BD5EA29EF39BD00390D01 /* ClassyWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BD5E229EF39A100390D01 /* ClassyWidgetsBundle.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		279BD5DB29EF397C00390D01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 279BD59229EF35FE00390D01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 279BD5CC29EF397900390D01;
+			remoteInfo = ClassyWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		279BD5E129EF397C00390D01 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				279BD5DD29EF397C00390D01 /* ClassyWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		279BD59A29EF35FE00390D01 /* Classy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Classy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		279BD59D29EF35FE00390D01 /* ClassyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassyApp.swift; sourceTree = "<group>"; };
-		279BD59F29EF35FE00390D01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		279BD5A129EF360000390D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		279BD5A429EF360000390D01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		279BD5AB29EF361A00390D01 /* ExamAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamAddView.swift; sourceTree = "<group>"; };
+		279BD5AC29EF361A00390D01 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		279BD5AD29EF361A00390D01 /* ClassListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassListView.swift; sourceTree = "<group>"; };
+		279BD5AE29EF361B00390D01 /* ExamEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamEditView.swift; sourceTree = "<group>"; };
+		279BD5AF29EF361B00390D01 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		279BD5B029EF361B00390D01 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		279BD5B129EF361B00390D01 /* FullWeekClassListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullWeekClassListView.swift; sourceTree = "<group>"; };
+		279BD5B229EF361C00390D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../ClassTimer/ClassTimer/Assets.xcassets; sourceTree = "<group>"; };
+		279BD5B329EF361C00390D01 /* ClassyApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassyApp.swift; sourceTree = "<group>"; };
+		279BD5B429EF361D00390D01 /* EditClassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClassView.swift; sourceTree = "<group>"; };
+		279BD5B529EF361D00390D01 /* ClassAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassAddView.swift; sourceTree = "<group>"; };
+		279BD5B629EF361D00390D01 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		279BD5B729EF361D00390D01 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		279BD5C729EF390F00390D01 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		279BD5CD29EF397900390D01 /* ClassyWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ClassyWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		279BD5CF29EF397900390D01 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		279BD5D129EF397900390D01 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		279BD5D829EF397C00390D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		279BD5DA29EF397C00390D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		279BD5E229EF39A100390D01 /* ClassyWidgetsBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassyWidgetsBundle.swift; sourceTree = "<group>"; };
+		279BD5E329EF39A100390D01 /* NextLessonWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLessonWidget.swift; sourceTree = "<group>"; };
+		279BD5E429EF39A100390D01 /* ScheduleDayWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDayWidget.swift; sourceTree = "<group>"; };
+		27FDB9E029EF3F9800430860 /* Classy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Classy.entitlements; sourceTree = "<group>"; };
+		27FDB9E129EF3FA000430860 /* ClassyWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClassyWidgetsExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,13 +92,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		279BD5CA29EF397900390D01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				279BD5D229EF397900390D01 /* SwiftUI.framework in Frameworks */,
+				279BD5D029EF397900390D01 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		279BD59129EF35FE00390D01 = {
 			isa = PBXGroup;
 			children = (
+				27FDB9E129EF3FA000430860 /* ClassyWidgetsExtension.entitlements */,
 				279BD59C29EF35FE00390D01 /* Classy */,
+				279BD5D329EF397900390D01 /* ClassyWidgets */,
+				279BD5CE29EF397900390D01 /* Frameworks */,
 				279BD59B29EF35FE00390D01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				279BD59A29EF35FE00390D01 /* Classy.app */,
+				279BD5CD29EF397900390D01 /* ClassyWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,9 +127,21 @@
 		279BD59C29EF35FE00390D01 /* Classy */ = {
 			isa = PBXGroup;
 			children = (
-				279BD59D29EF35FE00390D01 /* ClassyApp.swift */,
-				279BD59F29EF35FE00390D01 /* ContentView.swift */,
-				279BD5A129EF360000390D01 /* Assets.xcassets */,
+				27FDB9E029EF3F9800430860 /* Classy.entitlements */,
+				279BD5B229EF361C00390D01 /* Assets.xcassets */,
+				279BD5AF29EF361B00390D01 /* Class.swift */,
+				279BD5C729EF390F00390D01 /* ContentView.swift */,
+				279BD5B529EF361D00390D01 /* ClassAddView.swift */,
+				279BD5AD29EF361A00390D01 /* ClassListView.swift */,
+				279BD5B329EF361C00390D01 /* ClassyApp.swift */,
+				279BD5B029EF361B00390D01 /* DayView.swift */,
+				279BD5B429EF361D00390D01 /* EditClassView.swift */,
+				279BD5AB29EF361A00390D01 /* ExamAddView.swift */,
+				279BD5AE29EF361B00390D01 /* ExamEditView.swift */,
+				279BD5B129EF361B00390D01 /* FullWeekClassListView.swift */,
+				279BD5AC29EF361A00390D01 /* SettingsView.swift */,
+				279BD5B629EF361D00390D01 /* Tab.swift */,
+				279BD5B729EF361D00390D01 /* TimerView.swift */,
 				279BD5A329EF360000390D01 /* Preview Content */,
 			);
 			path = Classy;
@@ -67,6 +155,27 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		279BD5CE29EF397900390D01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				279BD5CF29EF397900390D01 /* WidgetKit.framework */,
+				279BD5D129EF397900390D01 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		279BD5D329EF397900390D01 /* ClassyWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				279BD5E229EF39A100390D01 /* ClassyWidgetsBundle.swift */,
+				279BD5E329EF39A100390D01 /* NextLessonWidget.swift */,
+				279BD5E429EF39A100390D01 /* ScheduleDayWidget.swift */,
+				279BD5D829EF397C00390D01 /* Assets.xcassets */,
+				279BD5DA29EF397C00390D01 /* Info.plist */,
+			);
+			path = ClassyWidgets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +186,34 @@
 				279BD59629EF35FE00390D01 /* Sources */,
 				279BD59729EF35FE00390D01 /* Frameworks */,
 				279BD59829EF35FE00390D01 /* Resources */,
+				279BD5E129EF397C00390D01 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				279BD5DC29EF397C00390D01 /* PBXTargetDependency */,
 			);
 			name = Classy;
 			productName = Classy;
 			productReference = 279BD59A29EF35FE00390D01 /* Classy.app */;
 			productType = "com.apple.product-type.application";
+		};
+		279BD5CC29EF397900390D01 /* ClassyWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 279BD5DE29EF397C00390D01 /* Build configuration list for PBXNativeTarget "ClassyWidgetsExtension" */;
+			buildPhases = (
+				279BD5C929EF397900390D01 /* Sources */,
+				279BD5CA29EF397900390D01 /* Frameworks */,
+				279BD5CB29EF397900390D01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClassyWidgetsExtension;
+			productName = ClassyWidgetsExtension;
+			productReference = 279BD5CD29EF397900390D01 /* ClassyWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +226,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					279BD59929EF35FE00390D01 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					279BD5CC29EF397900390D01 = {
 						CreatedOnToolsVersion = 14.3;
 					};
 				};
@@ -116,6 +247,7 @@
 			projectRoot = "";
 			targets = (
 				279BD59929EF35FE00390D01 /* Classy */,
+				279BD5CC29EF397900390D01 /* ClassyWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -126,7 +258,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				279BD5A529EF360000390D01 /* Preview Assets.xcassets in Resources */,
-				279BD5A229EF360000390D01 /* Assets.xcassets in Resources */,
+				279BD5C029EF361E00390D01 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		279BD5CB29EF397900390D01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				279BD5D929EF397C00390D01 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +277,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279BD5A029EF35FE00390D01 /* ContentView.swift in Sources */,
-				279BD59E29EF35FE00390D01 /* ClassyApp.swift in Sources */,
+				279BD5C529EF361E00390D01 /* TimerView.swift in Sources */,
+				279BD5BE29EF361E00390D01 /* DayView.swift in Sources */,
+				279BD5BA29EF361E00390D01 /* SettingsView.swift in Sources */,
+				279BD5BD29EF361E00390D01 /* Class.swift in Sources */,
+				279BD5B929EF361E00390D01 /* ExamAddView.swift in Sources */,
+				279BD5BB29EF361E00390D01 /* ClassListView.swift in Sources */,
+				279BD5C429EF361E00390D01 /* Tab.swift in Sources */,
+				279BD5C229EF361E00390D01 /* EditClassView.swift in Sources */,
+				279BD5BF29EF361E00390D01 /* FullWeekClassListView.swift in Sources */,
+				279BD5C129EF361E00390D01 /* ClassyApp.swift in Sources */,
+				279BD5C829EF390F00390D01 /* ContentView.swift in Sources */,
+				279BD5BC29EF361E00390D01 /* ExamEditView.swift in Sources */,
+				279BD5C329EF361E00390D01 /* ClassAddView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		279BD5C929EF397900390D01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				279BD5EA29EF39BD00390D01 /* ClassyWidgetsBundle.swift in Sources */,
+				279BD5E929EF39BA00390D01 /* NextLessonWidget.swift in Sources */,
+				279BD5E829EF39B600390D01 /* ScheduleDayWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		279BD5DC29EF397C00390D01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 279BD5CC29EF397900390D01 /* ClassyWidgetsExtension */;
+			targetProxy = 279BD5DB29EF397C00390D01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		279BD5A629EF360000390D01 /* Debug */ = {
@@ -195,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -262,8 +431,10 @@
 		279BD5A929EF360000390D01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Classy/Classy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Classy/Preview Content\"";
@@ -273,14 +444,15 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = somePIE.Classy;
+				PRODUCT_BUNDLE_IDENTIFIER = somePIE.ClassyList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -291,8 +463,10 @@
 		279BD5AA29EF360000390D01 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Classy/Classy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Classy/Preview Content\"";
@@ -302,15 +476,74 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = somePIE.Classy;
+				PRODUCT_BUNDLE_IDENTIFIER = somePIE.ClassyList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		279BD5DF29EF397C00390D01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ClassyWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4Q67W3J8LP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClassyWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ClassyWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = somePIE.ClassyList.ClassyWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		279BD5E029EF397C00390D01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ClassyWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4Q67W3J8LP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClassyWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ClassyWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = somePIE.ClassyList.ClassyWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,6 +567,15 @@
 			buildConfigurations = (
 				279BD5A929EF360000390D01 /* Debug */,
 				279BD5AA29EF360000390D01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		279BD5DE29EF397C00390D01 /* Build configuration list for PBXNativeTarget "ClassyWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				279BD5DF29EF397C00390D01 /* Debug */,
+				279BD5E029EF397C00390D01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
