@@ -125,10 +125,12 @@ struct ClassListView: View {
                                     Text(cl.name)
                                         .fontWeight(.medium)
                                         .frame(maxWidth: .infinity, alignment: .leading)
-                                    Text(cl.location)
-                                        .font(.system(size: 14))
-                                        .fontWeight(.thin)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    if cl.location != ""{
+                                        Text(cl.location)
+                                            .font(.system(size: 14))
+                                            .fontWeight(.thin)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                    }
                                 }
 
 

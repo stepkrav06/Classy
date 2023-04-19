@@ -221,7 +221,7 @@ struct EditClassView: View {
                 }
                 .frame(minHeight: 200)
                 Button {
-                    guard name != "", dateTimes != [:], chosenColor != Color(.sRGB, red: 0, green: 0, blue: 0), pickedLocation != "" else {
+                    guard name != "", dateTimes != [:], chosenColor != Color(.sRGB, red: 0, green: 0, blue: 0) else {
                         emptyFieldsAlert.toggle()
                         return
                     }
