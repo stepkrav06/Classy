@@ -37,10 +37,10 @@ struct TimerView: View {
         var nextWeekday = todayWeekday
         var nextTime = ""
         var nextName = ""
-        print(todayWeekday)
+
         var flag = 0
         while nextTime == ""{
-            print("classes")
+
 
             if viewModel.schedule.schedule == [1:[],2:[],3:[],4:[],5:[],6:[],7:[]]{
                 break
@@ -106,17 +106,12 @@ struct TimerView: View {
             viewModel.defaults.set(viewModel.countdownStartTime, forKey: "countdownStartTime")
             viewModel.defaults.set(viewModel.countdownTimeLength, forKey: "countdownTimeLength")
             viewModel.defaults.set(viewModel.countdownStartClassTime, forKey: "countdownStartClassTime")
-            print("bebe")
 
         } else {
             viewModel.countdownStartClassTime = Date(timeIntervalSinceNow: TimeInterval(intervalToNextClass))
             viewModel.defaults.set(viewModel.countdownStartClassTime, forKey: "countdownStartClassTime")
-            print(viewModel.countdownStartClassTime)
         }
-        print(nextName)
-        print(nextTime)
-        print(Date() - viewModel.countdownStartTime)
-        print(((Date() - viewModel.countdownStartTime)/viewModel.countdownTimeLength))
+
         timeToNextClass = Double(intervalToNextClass)
         if viewModel.countdownTimeLength != 0 {
 
@@ -126,7 +121,7 @@ struct TimerView: View {
     }
     func calculateTimeToNextExam() {
         if !viewModel.exams.isEmpty{
-            print("error")
+
             let nextExam = viewModel.exams.sorted(by: {
                 $0.date < $1.date
             })[0]
@@ -142,12 +137,12 @@ struct TimerView: View {
                 viewModel.defaults.set(viewModel.countdownStartTimeExam, forKey: "countdownStartTimeExam")
                 viewModel.defaults.set(viewModel.countdownTimeLengthExam, forKey: "countdownTimeLengthExam")
                 viewModel.defaults.set(viewModel.countdownStartClassTimeExam, forKey: "countdownStartClassTimeExam")
-                print("bebe")
+
 
             } else {
                 viewModel.countdownStartClassTimeExam = Date(timeIntervalSinceNow: TimeInterval(timeToNextExam))
                 viewModel.defaults.set(viewModel.countdownStartClassTimeExam, forKey: "countdownStartClassTimeExam")
-                print(viewModel.countdownStartClassTimeExam)
+                
             }
 
             if viewModel.countdownTimeLengthExam != 0 {

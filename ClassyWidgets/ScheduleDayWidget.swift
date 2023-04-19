@@ -33,7 +33,7 @@ struct ScheduleDayWidgetContent: TimelineEntry {
 
 
 
-let snapshotEntry = ScheduleDayWidgetContent(schedule: Schedule(schedule:[2:[Lesson(name: "Math", timeStart: "10:30", timeEnd: "12:30", colorR: 0.3, colorG: 0.1, colorB: 0.6, colorA: 0.5)]]))
+let snapshotEntry = ScheduleDayWidgetContent(schedule: Schedule(schedule:[1:[Lesson(name: "Math", timeStart: "10:30", timeEnd: "12:30", colorR: 0.3, colorG: 0.1, colorB: 0.6, colorA: 0.5),Lesson(name: "English", timeStart: "13:00", timeEnd: "15:00", colorR: 0.6, colorG: 0.1, colorB: 0.3, colorA: 0.5)],2:[Lesson(name: "Math", timeStart: "10:30", timeEnd: "12:30", colorR: 0.3, colorG: 0.1, colorB: 0.6, colorA: 0.5),Lesson(name: "English", timeStart: "13:00", timeEnd: "15:00", colorR: 0.6, colorG: 0.1, colorB: 0.3, colorA: 0.5)],3:[Lesson(name: "Math", timeStart: "10:30", timeEnd: "12:30", colorR: 0.3, colorG: 0.1, colorB: 0.6, colorA: 0.5),Lesson(name: "English", timeStart: "13:00", timeEnd: "15:00", colorR: 0.6, colorG: 0.1, colorB: 0.3, colorA: 0.5)],4:[Lesson(name: "Math", timeStart: "10:30", timeEnd: "12:30", colorR: 0.3, colorG: 0.1, colorB: 0.6, colorA: 0.5),Lesson(name: "English", timeStart: "13:00", timeEnd: "15:00", colorR: 0.6, colorG: 0.1, colorB: 0.3, colorA: 0.5)],5:[Lesson(name: "Math", timeStart: "10:30", timeEnd: "12:30", colorR: 0.3, colorG: 0.1, colorB: 0.6, colorA: 0.5),Lesson(name: "English", timeStart: "13:00", timeEnd: "15:00", colorR: 0.6, colorG: 0.1, colorB: 0.3, colorA: 0.5)],6:[Lesson(name: "Math", timeStart: "10:30", timeEnd: "12:30", colorR: 0.3, colorG: 0.1, colorB: 0.6, colorA: 0.5),Lesson(name: "English", timeStart: "13:00", timeEnd: "15:00", colorR: 0.6, colorG: 0.1, colorB: 0.3, colorA: 0.5)],7:[Lesson(name: "Math", timeStart: "10:30", timeEnd: "12:30", colorR: 0.3, colorG: 0.1, colorB: 0.6, colorA: 0.5),Lesson(name: "English", timeStart: "13:00", timeEnd: "15:00", colorR: 0.6, colorG: 0.1, colorB: 0.3, colorA: 0.5)]]))
 
 struct ScheduleDayProvider: TimelineProvider {
     func placeholder(in context: Context) -> ScheduleDayWidgetContent {
@@ -41,24 +41,7 @@ struct ScheduleDayProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (ScheduleDayWidgetContent) -> ()) {
-        let defaults = UserDefaults(suiteName: "group.somePIE.ClassTimer")!
-        if let data = defaults.data(forKey: "Schedule") {
-            do {
-                // Create JSON Decoder
-                let decoder = JSONDecoder()
-
-                // Decode Note
-                let schedule = try decoder.decode(Schedule.self, from: data)
-                let entry = ScheduleDayWidgetContent(date: Date(), schedule: schedule)
-                completion(entry)
-
-
-
-
-            } catch {
-                print("Unable to Decode schedule (\(error))")
-            }
-        }
+        completion(snapshotEntry)
 
     }
 
@@ -79,10 +62,9 @@ struct ScheduleDayProvider: TimelineProvider {
 
                     // Decode Note
                     let schedule = try decoder.decode(Schedule.self, from: data)
-                    print("widget")
-                    print(schedule)
 
-                    let entry = ScheduleDayWidgetContent(date: entryDate, schedule: schedule)
+
+                    let entry = ScheduleDayWidgetContent(date: entryDateStart, schedule: schedule)
                     entries.append(entry)
 
 
@@ -92,6 +74,10 @@ struct ScheduleDayProvider: TimelineProvider {
                 }
             }
 
+        }
+        if entries.isEmpty{
+            let entry = ScheduleDayWidgetContent(schedule: Schedule(schedule: [1:[],2:[],3:[],4:[],5:[],6:[],7:[]]))
+            entries.append(entry)
         }
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
@@ -367,36 +353,7 @@ struct ScheduleDayWidgetMediumView: View {
         .padding()
     }
 }
-struct ScheduleDayWidgetMediumViewTT: View {
-    let entry: ScheduleDayWidgetContent
-    let dayToDayNumber = ["Mon":1, "Tue":2, "Wed":3, "Thu":4, "Fri":5, "Sat":6, "Sun":7]
 
-    let lessons: [Lesson]
-    init(entry: ScheduleDayWidgetContent) {
-        self.entry = entry
-        self.lessons = (entry.schedule.schedule[dayToDayNumber[entry.date.formatted(Date.FormatStyle().weekday().locale(Locale(identifier: "en_US")))]!] ?? []).filter { lesson in
-            print(lesson.timeStart)
-            print(entry.date.formatted(Date.FormatStyle().hour(.defaultDigits(amPM: .omitted)).locale(Locale(identifier: "ru"))))
-            return lesson.timeStart > entry.date.formatted(Date.FormatStyle().hour(.defaultDigits(amPM: .omitted)).locale(Locale(identifier: "ru")))
-        }
-    }
-    var body: some View {
-        VStack{
-            Text(entry.date.formatted(Date.FormatStyle().weekday(.wide).locale(Locale(identifier: "en_US"))))
-                .fontWeight(.thin)
-                .italic()
-                .frame(maxWidth: .infinity, alignment: .topLeading)
-                .padding(.top, 4)
-                .padding(.horizontal, 4)
-            RoundedRectangle(cornerRadius: 50, style: .continuous)
-                .frame(height: 2)
-                .offset(x:0,y:-10)
-
-        }
-        .frame(maxHeight: .infinity, alignment: .top)
-        .padding()
-    }
-}
 
 
 

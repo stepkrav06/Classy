@@ -75,7 +75,7 @@ struct ClassyApp: App {
 
                 // Decode Note
                 let schedule = try decoder.decode(Schedule.self, from: data)
-                print(schedule)
+
                 viewModel.schedule = schedule
                 var lessons: [Lesson] = []
                 for day in schedule.schedule.keys {
@@ -100,8 +100,8 @@ struct ClassyApp: App {
                 for time in cl.daysTimes[day]! {
                     let startTime = time.components(separatedBy: " - ")[0]
                     // first notification time
-                    print("For class \(cl.name):")
-                    if viewModel.wantNotifications{
+
+                    if viewModel.wantNotifications && viewModel.firstNotificationTime != 0 {
                         var classHour = Int(startTime.components(separatedBy: ":")[0])!
                         var classMin = Int(startTime.components(separatedBy: ":")[1])!
                         if classMin - Int(viewModel.firstNotificationTime) % 3600 / 60 < 0 {
@@ -125,7 +125,7 @@ struct ClassyApp: App {
                         let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
                         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                         UNUserNotificationCenter.current().add(request)
-                        print("Scheduled for \(dateInfo)")
+
                     }
                     if viewModel.wantSecondNotification {
                         var classHour = Int(startTime.components(separatedBy: ":")[0])!
@@ -151,7 +151,7 @@ struct ClassyApp: App {
                         let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
                         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                         UNUserNotificationCenter.current().add(request)
-                        print("Scheduled for \(dateInfo)")
+                        
                     }
 
 

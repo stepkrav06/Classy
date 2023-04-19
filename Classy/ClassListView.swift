@@ -291,10 +291,7 @@ struct ClassListView: View {
             let todayDay = formatter.string(from: today)
             selectedIndex = dayToDayNumber[todayDay]!-1
 
-            viewModel.defaults.removeObject(forKey: "Exam")
-            for exam in viewModel.exams {
-                print(exam.name)
-            }
+        
         }
         .alert("Are you sure you want to delete this class?", isPresented: $deleteClassAlert) {
             Button("Cancel", role: .cancel) { }
