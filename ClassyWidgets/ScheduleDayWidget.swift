@@ -62,7 +62,17 @@ struct ScheduleDayProvider: TimelineProvider {
 
                     // Decode Note
                     let schedule = try decoder.decode(Schedule.self, from: data)
-                    for day in schedule.schedule.keys.sorted() {
+                    var daysStartFromToday: [Int] = []
+
+                    for day in schedule.schedule.keys.sorted(){
+                        daysStartFromToday.append((day + todayWeekday - 2) % 7 + 1)
+                    }
+
+                    for day in daysStartFromToday {
+                        let dayDiff = (day - todayWeekday + 7) % 7
+                        let firstDayEntryDate = Calendar.current.date(byAdding: .day, value: dayDiff, to: currentDayStart)!
+                        let firstDayEntry = ScheduleDayWidgetContent(date: firstDayEntryDate, lessons: schedule.schedule[day] ?? [])
+                        entries.append(firstDayEntry)
                         for lesson in schedule.schedule[day]!.sorted(by: {
                             let formatter1 = DateFormatter()
                             formatter1.dateFormat = "HH:mm"
@@ -71,7 +81,7 @@ struct ScheduleDayProvider: TimelineProvider {
 
                             let startHours = Int(lesson.timeStart.components(separatedBy: ":")[0])!
                             let startMinutes = Int(lesson.timeStart.components(separatedBy: ":")[1])!
-                            let dayDiff = (day - todayWeekday + 7) % 7
+
                             var nextDateComponents = DateComponents()
                             nextDateComponents.hour = startHours
                             nextDateComponents.minute = startMinutes

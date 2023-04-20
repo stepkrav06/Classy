@@ -18,7 +18,7 @@ struct ClassListView: View {
     var formatter1 = DateFormatter()
     @State var editClassSheet = false
     @State var editExamSheet = false
-    @State var classToEditOrDelete: Class? = nil
+    @State private var classToEditOrDelete: Class? = nil
     @State var examToEditOrDelete: Exam? = nil
     @State var deleteClassAlert = false
     @State var deleteExamAlert = false
@@ -156,13 +156,16 @@ struct ClassListView: View {
 
 
                             }
-                            .swipeActions(allowsFullSwipe: false) {
+                            .swipeActions() {
                                                         Button {
-                                                            editClassSheet.toggle()
+                                                            classToEditOrDelete = cl
+
+
                                                         } label: {
                                                             Label("Edit", systemImage: "pencil")
                                                         }
                                                         .tint(.indigo)
+                                
 
                                                         Button(role: .destructive) {
                                                             classToEditOrDelete = cl
@@ -171,13 +174,17 @@ struct ClassListView: View {
                                                             Label("Delete", systemImage: "trash.fill")
                                                         }
                                                     }
-                            .sheet(isPresented: $editClassSheet){
-                                EditClassView(classToEdit: cl)
+                            .sheet(item: $classToEditOrDelete){ cl in
+
+                                    EditClassView(classToEdit: cl)
+
                             }
+
                         }
                     }
 
                     .listStyle(.plain)
+
                     
 
                 }
@@ -254,7 +261,7 @@ struct ClassListView: View {
                             }
                             .swipeActions(allowsFullSwipe: false) {
                                                         Button {
-                                                            editExamSheet.toggle()
+                                                            examToEditOrDelete = exam
                                                         } label: {
                                                             Label("Edit", systemImage: "pencil")
                                                         }
@@ -267,7 +274,7 @@ struct ClassListView: View {
                                                             Label("Delete", systemImage: "trash.fill")
                                                         }
                                                     }
-                            .sheet(isPresented: $editExamSheet){
+                            .sheet(item: $examToEditOrDelete){ exam in
                                 ExamEditView(examToEdit: exam)
                             }
                         }
@@ -292,6 +299,7 @@ struct ClassListView: View {
             formatter.locale = Locale(identifier: "en_US")
             let todayDay = formatter.string(from: today)
             selectedIndex = dayToDayNumber[todayDay]!-1
+
 
         
         }

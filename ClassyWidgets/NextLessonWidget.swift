@@ -48,7 +48,11 @@ struct NextLessonProvider: TimelineProvider {
 
                     // Decode Note
                     let schedule = try decoder.decode(Schedule.self, from: data)
-                    for day in schedule.schedule.keys.sorted() {
+                    var daysStartFromToday: [Int] = []
+                    for day in schedule.schedule.keys.sorted(){
+                        daysStartFromToday.append((day + todayWeekday - 2) % 7 + 1)
+                    }
+                    for day in daysStartFromToday {
                         for lesson in schedule.schedule[day]!.sorted(by: {
                             let formatter1 = DateFormatter()
                             formatter1.dateFormat = "HH:mm"
