@@ -174,11 +174,7 @@ struct ClassListView: View {
                                                             Label("Delete", systemImage: "trash.fill")
                                                         }
                                                     }
-                            .sheet(item: $classToEditOrDelete){ cl in
 
-                                    EditClassView(classToEdit: cl)
-
-                            }
 
                         }
                     }
@@ -188,6 +184,7 @@ struct ClassListView: View {
                     
 
                 }
+
 
             }
             if pick == "Exams"{
@@ -274,9 +271,7 @@ struct ClassListView: View {
                                                             Label("Delete", systemImage: "trash.fill")
                                                         }
                                                     }
-                            .sheet(item: $examToEditOrDelete){ exam in
-                                ExamEditView(examToEdit: exam)
-                            }
+
                         }
                     }
 
@@ -291,6 +286,12 @@ struct ClassListView: View {
 
 
 
+        }
+        .sheet(item: $examToEditOrDelete){ exam in
+            ExamEditView(examToEdit: exam)
+        }
+        .sheet(item: $classToEditOrDelete){ cl in
+                EditClassView(classToEdit: cl)
         }
         .onAppear{
             let today = Date()
